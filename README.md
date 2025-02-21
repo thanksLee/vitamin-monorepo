@@ -7,6 +7,9 @@
 ## 1. Backlog 관리 규칙
 - 규칙
     - Prefix는 모두 대문자로 한다.
+    - Common 은 FrontEnd, BackEnd 모두 사용 가능한 모듈을 의미한다.
+    - PROJECT_NAME 은 프로젝트 이름을 의미한다.
+    - ISSUE_NUMBER 는 이슈 번호를 의미한다.
     ```
     - Common + PROJECT_NAME + [ISSUE_NUMBER]
     - FrontEnd + PROJECT_NAME + [ISSUE_NUMBER]
