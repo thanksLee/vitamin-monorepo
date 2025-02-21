@@ -65,9 +65,11 @@
         - BackEnd : BE
         - Project : PROJECT_NAME
         - Issue : ISSUE_NUMBER
+    - 버전 규칙
 
 - 작성 예시
     ```
+    ex) develop/VITAMIN/0.1.0
     ex) develop/COMMON/MONOREPO/#1
     ex) develop/FE/MONOREPO/#1
     ex) develop/FE/VITAMIN-UI/#2
@@ -89,3 +91,12 @@ graph TD;
     hotfix --> |"병합"| develop
 
 ```
+
+## 5. 버전 관리 규칙
+
+- 규칙
+
+    - [Semantic Versioning 2.0.0](https://semver.org/lang/ko/) 을 참고한다.
+
+    - 버전은 다음과 같은 규칙으로 관리한다.
+        - 최초 Initialization 시 버전은 0.1.0 이다.
