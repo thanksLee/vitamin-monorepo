@@ -82,7 +82,16 @@
       ![](./readmeImages/2025-02-22-14-16-33.png)
 
     > vi .env
-
       ```env
         VITE_DISABLE_TELEMETRY=true
       ```
+
+## 3. 프로젝트 Dependency 관계도
+
+```mermaid
+graph TD
+    vitaminstudio --> vitamin-core
+    vitaminstudio --> vitamin-ui
+    vitamin-ui --> vitamin-core
+```
+
