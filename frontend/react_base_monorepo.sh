@@ -137,14 +137,7 @@ PACKAGEJSON="package.json"
 
 sed -i '/"test": "echo \\"Error: no test specified\\" && exit 1"/a \ \ \ \ ,"lint": "eslint .",' ${PACKAGEJSON}
 sed -i '/"lint": "eslint ."/a \ \ \ \ "format": "prettier --write .",' ${PACKAGEJSON}
-sed -i '/"format": "prettier --write ."/a \ \ \ \ "prepare": "husky install",' ${PACKAGEJSON}
-sed -i '/"prepare": "husky install"/a \ \ \ \ "dev": "pnpm --parallel --stream -r run dev"' ${PACKAGEJSON}
-
-# git hook husky 구성
-
-pnpm add --save-dev husky lint-staged
-
-sed -i '$i \  ,"lint-staged": {\n    "**/*.{js,ts,tsx}": [\n      "eslint --fix"\n    ],\n    "**/*": "prettier --write --ignore-unknown"\n  }' ${PACKAGEJSON}
+sed -i '/"format": "prettier --write ."/a \ \ \ \ "dev": "pnpm --parallel --stream -r run dev"' ${PACKAGEJSON}
 
 PNPM_WORKSPACE="pnpm-workspace.yaml"
 
@@ -171,8 +164,6 @@ cat <<EOL >${TSCONFIG}
 EOL
 
 pnpm run format
-
-git init
 
 # 기본 package 설치
 
