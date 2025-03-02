@@ -1,5 +1,20 @@
 name: 기능 요청
 description: Backlog 규칙에 따라 작성해주세요.
+- 규칙
+    - Prefix는 모두 대문자로 한다.
+    - Common 은 FrontEnd, BackEnd 모두 사용 가능한 모듈을 의미한다.
+    - PROJECT_NAME 은 프로젝트 이름을 의미한다.
+    - ISSUE_NUMBER 는 이슈 번호를 의미한다.
+    ```
+    - Common + PROJECT_NAME + [ISSUE_NUMBER]
+    - FrontEnd + PROJECT_NAME + [ISSUE_NUMBER]
+    - BackEnd + PROJECT_NAME + [ISSUE_NUMBER]
+    ```
+- 작성 예시
+    ```
+    ex) [COMMON][MONOREPO][#1]
+    ex) [FE][MONOREPO][#1], [FE][VITAMIN-UI][#2], [FE][VITAMIN-CORE][#3]
+    ex) [BE][MONOREPO][#1], [BE][VITAMIN-UI][#2], [BE][VITAMIN-CORE][#3]
 title: "[][][]: "
 labels: ["enhancement"]
 body:
