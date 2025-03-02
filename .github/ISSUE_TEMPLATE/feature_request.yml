@@ -1,47 +1,44 @@
 name: 기능 요청
-description: 새로운 기능 요청을 위한 양식입니다
-title: "[기능]: "
+description: Backlog 규칙에 따라 작성해주세요.
+title: "[][][]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
         ## 기능 요청 상세 정보
-        
+
         아래 항목들을 작성해주세요.
-  
+
   - type: dropdown
     id: category
     attributes:
       label: 구분
       description: 기능의 카테고리를 선택해주세요
       options:
-        - 개발
-        - 디자인
-        - 기획
-        - 버그수정
+        - 로그인
         - 기타
     validations:
       required: true
-      
+
   - type: input
     id: number
     attributes:
       label: 번호
-      description: 기능 번호를 입력해주세요
-      placeholder: "예: 1, 2, 3..."
+      description: task 번호를 입력해주세요
+      placeholder: "예: FE-1, BE-2, FE-3..."
     validations:
       required: true
-      
+
   - type: input
     id: feature
     attributes:
       label: 기능
       description: 기능명을 입력해주세요
-      placeholder: "예: 로그인 기능, 회원가입 기능..."
+      placeholder: "예: 로그인 화면 구현, 입력 유효성 검증..."
     validations:
       required: true
-      
+
   - type: textarea
     id: details
     attributes:
@@ -50,7 +47,7 @@ body:
       placeholder: "기능에 대한 자세한 설명을 작성해주세요"
     validations:
       required: true
-      
+
   - type: input
     id: start-date
     attributes:
@@ -59,7 +56,7 @@ body:
       placeholder: "2025-03-10"
     validations:
       required: true
-      
+
   - type: input
     id: end-date
     attributes:
@@ -68,16 +65,16 @@ body:
       placeholder: "2025-03-15"
     validations:
       required: true
-      
+
   - type: input
     id: work-days
     attributes:
       label: 작업일수
       description: 예상 작업일수를 입력해주세요
-      placeholder: "예: 5"
+      placeholder: "예: 0.1, 0.5, 1, 2, 3..."
     validations:
       required: true
-      
+
   - type: textarea
     id: additional-info
     attributes:
