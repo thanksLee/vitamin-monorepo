@@ -1,5 +1,5 @@
 name: 기능 요청
-description: Backlog 규칙에 따라 작성해주세요.<br>- 규칙<br>    - Prefix는 모두 대문자로 한다.
+description: Backlog 규칙에 따라 작성해주세요.
 title: "[][][]: "
 labels: ["enhancement"]
 body:
