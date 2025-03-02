@@ -1,3 +1,12 @@
+# Vitamin Monorepo의 시작
+
+   - 이 프로젝트는 Study와 Vitamin Suite을 만들기 위한 Monorepo 프로젝트이다.
+   - 현재는 Frontend 는 React, Backend는 Python FastAPI를 사용할 예정이지만, Spring Boot 등 다른 프레임워크를 사용할 수 있다.
+   - 어쩌면 Delphi를 사용할 수도 있는데, 이때는 Cross Platform을 지원하기 위해서 FireMonkey 환경으로 할 수도 있을수 있다. 아니면 윈도만 지원할 수도 있고...
+   - DB는 Oracle, PostgreSQL, Firebird, MariaDB, MySQL 등 다양한 DB를 사용할 수 있다.
+   - 모델링 툴은 내가 가장 잘 사용할 수 있는 PowerDesigner를 사용할 수 있지만, 다른 모델링 툴을 사용할 수도 있다.
+
+
 # 프로젝트 규칙
 
 - 이슈관리 참조

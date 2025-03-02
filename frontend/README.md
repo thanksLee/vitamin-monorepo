@@ -2,7 +2,7 @@
 
 본 프로젝트는 React 를 심도있게 공부하기 위한 프로젝트입니다.
 
-# 1 프로젝트 사용 버전 정보
+# 1. 프로젝트 사용 버전 정보
 
 - Node.js 버전 20.15.0 이상 사용하며, 현 프로젝트는 22.11.0 버전을 사용.
 
@@ -94,4 +94,3 @@ graph TD
     vitaminstudio --> vitamin-ui
     vitamin-ui --> vitamin-core
 ```
-
