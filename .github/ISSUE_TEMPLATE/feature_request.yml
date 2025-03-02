@@ -7,24 +7,82 @@ body:
     attributes:
       value: |
         ## 기능 요청 상세 정보
-
-        아래 표를 작성해주세요:
-
-        | 구분 | 번호 | 기능 | 상세 내용 | 시작일자 | 종료일자 | 작업일수 |
-        |------|------|------|----------|---------|---------|---------|
-        |      |      |      |          |         |         |         |
-
-  - type: textarea
-    id: feature-details
+        
+        아래 항목들을 작성해주세요.
+  
+  - type: dropdown
+    id: category
     attributes:
-      label: 기능 상세 정보
-      description: 위 표의 내용을 복사하여 작성해주세요
-      placeholder: "| 개발 | 1 | 로그인 기능 | 사용자 인증 시스템 | 2025-03-10 | 2025-03-15 | 5 |"
+      label: 구분
+      description: 기능의 카테고리를 선택해주세요
+      options:
+        - 개발
+        - 디자인
+        - 기획
+        - 버그수정
+        - 기타
     validations:
       required: true
-
+      
+  - type: input
+    id: number
+    attributes:
+      label: 번호
+      description: 기능 번호를 입력해주세요
+      placeholder: "예: 1, 2, 3..."
+    validations:
+      required: true
+      
+  - type: input
+    id: feature
+    attributes:
+      label: 기능
+      description: 기능명을 입력해주세요
+      placeholder: "예: 로그인 기능, 회원가입 기능..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: details
+    attributes:
+      label: 상세 내용
+      description: 기능에 대한 상세 내용을 입력해주세요
+      placeholder: "기능에 대한 자세한 설명을 작성해주세요"
+    validations:
+      required: true
+      
+  - type: input
+    id: start-date
+    attributes:
+      label: 시작일자
+      description: 작업 시작 예정일을 입력해주세요 (YYYY-MM-DD)
+      placeholder: "2025-03-10"
+    validations:
+      required: true
+      
+  - type: input
+    id: end-date
+    attributes:
+      label: 종료일자
+      description: 작업 종료 예정일을 입력해주세요 (YYYY-MM-DD)
+      placeholder: "2025-03-15"
+    validations:
+      required: true
+      
+  - type: input
+    id: work-days
+    attributes:
+      label: 작업일수
+      description: 예상 작업일수를 입력해주세요
+      placeholder: "예: 5"
+    validations:
+      required: true
+      
   - type: textarea
     id: additional-info
     attributes:
       label: 추가 정보
-      description: 이 기능이 필요한 이유나 배경에 대해 설명해주세요
+      description: 기타 추가 정보가 있다면 입력해주세요
+      placeholder: "추가 정보를 입력해주세요"
+    validations:
+      required: false
