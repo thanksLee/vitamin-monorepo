@@ -1,12 +1,12 @@
 ---
-name: 기능 요청 템플릿
-about: 새로운 기능 요청을 위한 템플릿입니다.
-title: "[기능]: "
+name: Backlog 등록 템플릿
+about: Backlog 등록을 위한 템플릿입니다.
+title: "[][][]: "
 labels: enhancement
 assignees:
 ---
 
-## 기능 요청 상세 정보
+## Backlog 상세 정보
 
 | 구분 | 번호 | 기능 | 상세 내용 | 시작일자 | 종료일자 | 작업일수 |
 | :-- | :-- | :-- | :-- | :-- | :-- | :-- |
