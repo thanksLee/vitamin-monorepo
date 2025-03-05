@@ -86,7 +86,7 @@ mermaid format으로 sequence diagram을 작성합니다. 시나리오별로 구
 백엔드 API 및 WebSocket 명세서를 작성해 주세요. 다음 지침을 따라주세요:
 
 1. API 명세서 작성:
-   - 로그인 API에 대한 명세를 작성하세요.
+   - API에 대한 명세를 작성하세요.
    - 요청(Request)과 응답(Response)을 구분하여 작성하세요.
    - 각 항목에 대해 다음 정보를 포함하는 테이블을 만드세요:
       - 구분 (header, body)
