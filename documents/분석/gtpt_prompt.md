@@ -163,7 +163,7 @@
    |순번|구분|영문 항목명|한글 항목명|타입|길이|필수/반복 여부|설명
    |:--|:--|:--|:--|:--|:--|:--|:--|
    |1|HEADER|Content-Type|콘텐츠타입|String|20|1|application/json|
-   |2|BODY|Authorization|인증키|String|100|1|- 출판유통통합시스템에서 부여받은 인증키|
+   |2|BODY|Authorization|인증키|String|100|1|- 시스템에서 부여받은 인증키|
    |3|BODY|reqdate|등록일자|String|8|1..n|- 등록 일자|
 
 
