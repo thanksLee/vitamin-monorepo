@@ -96,3 +96,7 @@ Atomic Design 방식으로 개발된 컴포넌트 라이브러리이다.
     ```ts
       import '@ant-design/v5-patch-for-react-19';
     ```
+
+  - docking tab을 위한 Package 설치
+
+    > pnpm add rc-dock
