@@ -1,6 +1,11 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@assets/*": ["../../shared/assets/*"]
+    },
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2022",
     "lib": ["ES2022"],
