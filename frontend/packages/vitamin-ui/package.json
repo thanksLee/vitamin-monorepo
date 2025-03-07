@@ -20,6 +20,7 @@
     "@types/styled-components": "^5.1.34",
     "@workspace/vitamin-core": "workspace:^",
     "antd": "^5.24.1",
+    "rc-dock": "^3.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "styled-components": "^6.1.15"
