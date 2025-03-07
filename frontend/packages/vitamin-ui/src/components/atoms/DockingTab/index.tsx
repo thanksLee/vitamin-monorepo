@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { forwardRef } from 'react';
-import DockLayout, { DockContext } from 'rc-dock';
+import DockLayout from 'rc-dock';
 
 import 'rc-dock/dist/rc-dock.css';
 import { DefaultLayout, DockingLayout, TabLayout } from './types';
 
-export const BaseDockLayout = forwardRef((props: any, ref: React.Ref<DockContext>) => {
-  const { defaultTabInfo, isVisible, ...rest } = props;
+export const BaseDockLayout = (props: any) => {
+  const { defaultTabInfo, isVisible, ref, ...rest } = props;
 
   const getDefaultDockingTabLayout = (tabInfos: TabLayout[]): DockingLayout => {
     const dockbox = DefaultLayout;
@@ -45,4 +44,4 @@ export const BaseDockLayout = forwardRef((props: any, ref: React.Ref<DockContext
       )}
     </>
   );
-});
+};
