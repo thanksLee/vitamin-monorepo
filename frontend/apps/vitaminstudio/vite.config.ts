@@ -5,6 +5,7 @@ import { visualizer } from 'rollup-plugin-visualizer';
 import viteCompression from 'vite-plugin-compression';
 import svgrPlugin from 'vite-plugin-svgr';
 import { resolve } from 'path';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { logger, timePlugin } from '@workspace/vitamin-core';
 
 // https://vite.dev/config/
@@ -26,6 +27,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     publicDir: '../../shared/public',
     plugins: [
       react(),
+      tsconfigPaths(),
       checker({
         typescript: true,
         terminal: false,
@@ -57,9 +59,9 @@ export default defineConfig(({ mode }: ConfigEnv) => {
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
-        '@assets': resolve(__dirname, '../../shared/assets'), // ✅ 절대 경로 사용
-        '@workspace/vitamin-ui': resolve(__dirname, '../../packages/vitamin-ui/src'),
+        '@assets': resolve(__dirname, '../../shared/assets'),
         '@workspace/vitamin-core': resolve(__dirname, '../../packages/vitamin-core/src'),
+        '@workspace/vitamin-ui': resolve(__dirname, '../../packages/vitamin-ui/src'),
       },
     },
     css: {
