@@ -1,6 +1,6 @@
 # VitaminStudio
 
-Atomic Design 기반의 컴포넌트 라이브러리이다.
+- 실제 Application이 구현되는 프로젝트이다.
 
 # 1. 필요 모듈 설치
 
