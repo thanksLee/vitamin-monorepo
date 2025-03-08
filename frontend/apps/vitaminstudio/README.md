@@ -1,4 +1,4 @@
-# Vitamin UI
+# VitaminStudio
 
 Atomic Design 기반의 컴포넌트 라이브러리이다.
 
