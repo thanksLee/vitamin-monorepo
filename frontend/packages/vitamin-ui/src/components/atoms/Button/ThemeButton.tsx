@@ -1,6 +1,6 @@
-import { BaseButton, BaseButtonProps } from './BaseButton';
-import { MoonIcon, SunIcon } from './icons';
 import { THEME_TYPES } from '@/constants';
+import { MoonIcon, SunIcon } from './icons';
+import { BaseButton, BaseButtonProps } from './BaseButton';
 
 interface ThemeButtonProps extends BaseButtonProps {
   themeStyle: typeof THEME_TYPES.LIGHT | typeof THEME_TYPES.DARK;
