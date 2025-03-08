@@ -7,11 +7,12 @@ import viteCompression from 'vite-plugin-compression';
 import { resolve } from 'path';
 import pkg from './package.json';
 import { splitJSModules, timePlugin } from './src/utils/misc';
-
+import tsconfigPaths from 'vite-tsconfig-paths';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(),
+    tsconfigPaths(),
     checker({
       typescript: true,
       terminal: false,
@@ -38,7 +39,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
+      '@vitamin-core': resolve(__dirname, 'src'),
       '@assets': resolve(__dirname, '../../shared/assets'), // ✅ 절대 경로 사용
     },
   },
