@@ -11,16 +11,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/cssinjs": "^1.23.0",
+    "@ant-design/icons": "^5.6.1",
+    "@tanstack/react-query": "^5.67.2",
+    "@types/styled-components": "^5.1.34",
     "@workspace/vitamin-core": "workspace:^",
     "@workspace/vitamin-ui": "workspace:^",
+    "antd": "^5.24.1",
+    "nprogress": "^0.2.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
     "@svgr/plugin-jsx": "^8.1.0",
     "@svgr/plugin-svgo": "^8.1.0",
+    "@tanstack/eslint-plugin-query": "^5.67.2",
+    "@tanstack/react-query-devtools": "^5.67.2",
     "@types/node": "^22.13.5",
+    "@types/nprogress": "^0.2.3",
     "@types/prop-types": "^15.7.14",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
@@ -30,6 +40,7 @@
     "eslint-plugin-react-refresh": "^0.4.18",
     "globals": "^15.14.0",
     "less": "^4.2.2",
+    "msw": "^2.7.3",
     "rollup-plugin-visualizer": "^5.14.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
@@ -39,5 +50,10 @@
     "vite-plugin-dts": "^4.5.0",
     "vite-plugin-svgr": "^4.3.0",
     "vite-tsconfig-paths": "^5.1.4"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
