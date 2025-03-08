@@ -7,7 +7,7 @@ import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 import pkg from './package.json';
 import viteCompression from 'vite-plugin-compression';
-
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { logger, splitJSModules, timePlugin } from '@workspace/vitamin-core';
 
 logger.debug('vite.config.ts');
@@ -16,6 +16,7 @@ logger.debug('vite.config.ts');
 export default defineConfig({
   plugins: [
     react(),
+    tsconfigPaths(),
     svgrPlugin({
       // https://react-svgr.com/docs/options/
       svgrOptions: {
@@ -61,7 +62,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/src',
+      '@vitamin-ui': '/src',
       '@assets': resolve(__dirname, '../../shared/assets'),
       '@workspace/vitamin-core': resolve(__dirname, '../../packages/vitamin-core/src'),
     },

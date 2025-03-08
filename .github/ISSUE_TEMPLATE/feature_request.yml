@@ -1,0 +1,87 @@
+name: Backlog 등록
+description: Backlog 규칙에 따라 작성해주세요.
+
+title: "[][][]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 기능 요청 상세 정보
+
+        아래 항목들을 작성해주세요.
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 구분
+      description: 기능의 카테고리를 선택해주세요
+      options:
+        - 로그인
+        - 스토리북
+        - 기타
+    validations:
+      required: true
+
+  - type: input
+    id: number
+    attributes:
+      label: 번호
+      description: task 번호를 입력해주세요
+      placeholder: "예: FE-1, BE-2, FE-3..."
+    validations:
+      required: true
+
+  - type: input
+    id: feature
+    attributes:
+      label: 기능
+      description: 기능명을 입력해주세요
+      placeholder: "예: 로그인 화면 구현, 입력 유효성 검증..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: 상세 내용
+      description: 기능에 대한 상세 내용을 입력해주세요
+      placeholder: "기능에 대한 자세한 설명을 작성해주세요"
+    validations:
+      required: true
+
+  - type: input
+    id: start-date
+    attributes:
+      label: 시작일자
+      description: 작업 시작 예정일을 입력해주세요 (YYYY-MM-DD)
+      placeholder: "2025-03-10"
+    validations:
+      required: true
+
+  - type: input
+    id: end-date
+    attributes:
+      label: 종료일자
+      description: 작업 종료 예정일을 입력해주세요 (YYYY-MM-DD)
+      placeholder: "2025-03-15"
+    validations:
+      required: true
+
+  - type: input
+    id: work-days
+    attributes:
+      label: 작업일수
+      description: 예상 작업일수를 입력해주세요
+      placeholder: "예: 0.1, 0.5, 1, 2, 3..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-info
+    attributes:
+      label: 추가 정보
+      description: 기타 추가 정보가 있다면 입력해주세요
+      placeholder: "추가 정보를 입력해주세요"
+    validations:
+      required: false

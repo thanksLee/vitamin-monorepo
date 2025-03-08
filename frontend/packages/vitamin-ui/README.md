@@ -37,9 +37,9 @@ Atomic Design 방식으로 개발된 컴포넌트 라이브러리이다.
       ...기존코드
       resolve: {
         alias: {
-          '@': resolve(__dirname, 'src'),
+          '@vitamin-ui': resolve(__dirname, 'src'),
           '@assets': resolve(__dirname, '../../shared/assets'), // ✅ 절대 경로 사용
-          '@workspace/vitamin-ui': resolve(__dirname, '../../packages/vitamin-ui/src'),  // 재 build 하지 않아도 수정된 사항이 바로 반영된다.
+          '@workspace/vitamin-core': resolve(__dirname, '../../packages/vitamin-core/src'),  // 재 build 하지 않아도 수정된 사항이 바로 반영된다.
         },
       },
     ```
@@ -96,3 +96,11 @@ Atomic Design 방식으로 개발된 컴포넌트 라이브러리이다.
     ```ts
       import '@ant-design/v5-patch-for-react-19';
     ```
+
+  - docking tab을 위한 Package 설치
+
+    > pnpm add rc-dock
+
+  - 다국어 지원을 위한 Package 설치
+
+    > pnpm add i18next i18next-browser-languagedetector i18next-http-backend react-i18next
