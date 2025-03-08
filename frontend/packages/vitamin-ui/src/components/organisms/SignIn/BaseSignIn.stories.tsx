@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent, expect } from '@storybook/test';
-import i18n from '@/i18n';
+import i18n from '@vitamin-ui/i18n';
 import { BaseSignIn } from './BaseSignIn';
 import * as S from './signin.styled';
 

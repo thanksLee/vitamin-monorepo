@@ -1,8 +1,8 @@
 import { MenuProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { I18nDropdown, ThemeButton } from '@/components';
-import i18n from '@/i18n';
-import { useTheme } from '@/contexts';
+import { I18nDropdown, ThemeButton } from '@vitamin-ui/components';
+import i18n from '@vitamin-ui/i18n';
+import { useTheme } from '@vitamin-ui/contexts';
 
 import * as S from './index.styled';
 

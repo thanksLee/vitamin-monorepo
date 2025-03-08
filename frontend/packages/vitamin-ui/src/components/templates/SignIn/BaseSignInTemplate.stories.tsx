@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { BaseSignInTemplate } from './BaseSignInTemplate';
-import { SuccessfulSubmission, ValidationError } from '@/components/organisms/SignIn/BaseSignIn.stories';
+import { SuccessfulSubmission, ValidationError } from '@vitamin-ui/components/organisms/SignIn/BaseSignIn.stories';
 
 const meta: Meta<typeof BaseSignInTemplate> = {
   title: 'Templates/SignIn/BaseSignInTemplate',

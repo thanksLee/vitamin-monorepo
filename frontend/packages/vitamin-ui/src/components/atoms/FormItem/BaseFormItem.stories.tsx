@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { BaseInput } from '@/components/atoms/Input';
+import { BaseInput } from '@vitamin-ui/components/atoms/Input';
 import { BaseFormItem } from './BaseFormItem';
 
 const meta: Meta<typeof BaseFormItem> = {

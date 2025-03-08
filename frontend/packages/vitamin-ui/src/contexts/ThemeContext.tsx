@@ -1,10 +1,10 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
-import { LANGUAGE_TYPES, THEME_TYPES, ThemeType } from '@/constants';
 import { App as AntApp, ConfigProvider, theme as antdTheme } from 'antd';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import koKR from 'antd/es/locale/ko_KR';
 import enUS from 'antd/es/locale/en_US';
-import { lightTheme, darkTheme } from '@/themes';
+import { LANGUAGE_TYPES, THEME_TYPES, type ThemeType } from '@vitamin-ui/constants';
+import { lightTheme, darkTheme } from '@vitamin-ui/themes';
 
 type ThemeContextType = {
   theme: ThemeType;

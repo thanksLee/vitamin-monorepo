@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { THEME_TYPES } from '@/constants';
+import { THEME_TYPES } from '@vitamin-ui/constants';
 import { ThemeButton } from './ThemeButton';
 
 const meta: Meta<typeof ThemeButton> = {

@@ -1,5 +1,5 @@
 import { Rule } from 'antd/es/form';
-import { BaseFormItem, BaseFormItemProps, PasswordInput } from '@/components/atoms';
+import { BaseFormItem, BaseFormItemProps, PasswordInput } from '@vitamin-ui/components/atoms';
 
 interface PasswordFormItemProps extends BaseFormItemProps {
   label: string;

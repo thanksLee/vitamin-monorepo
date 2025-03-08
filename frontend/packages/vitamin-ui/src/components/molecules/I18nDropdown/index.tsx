@@ -1,7 +1,7 @@
 import { TranslationOutlined } from '@ant-design/icons';
 import { MenuProps } from 'antd';
 
-import { BaseButton, BaseDropdown, BaseDropdownProps } from '@/components/atoms';
+import { BaseButton, BaseDropdown, BaseDropdownProps } from '@vitamin-ui/components/atoms';
 
 export type Lang = 'ko' | 'en';
 

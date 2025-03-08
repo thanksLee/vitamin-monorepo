@@ -1,4 +1,4 @@
-import { BaseFormItem, BaseButton, BaseButtonProps } from '@/components/atoms';
+import { BaseFormItem, BaseButton, BaseButtonProps } from '@vitamin-ui/components/atoms';
 import { ReactNode } from 'react';
 
 interface SubmitButtonFormItemProps extends BaseButtonProps {

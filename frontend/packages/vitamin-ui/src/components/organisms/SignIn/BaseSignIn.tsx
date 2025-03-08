@@ -1,6 +1,6 @@
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { PasswordFormItem, SignInFormItem, SubmitButtonFormItem } from '@/components/molecules';
+import { PasswordFormItem, SignInFormItem, SubmitButtonFormItem } from '@vitamin-ui/components/molecules';
 
 interface SignInFormValues {
   userid: string;

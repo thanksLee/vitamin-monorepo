@@ -1,6 +1,6 @@
 import { UserOutlined } from '@ant-design/icons';
 import { Rule } from 'antd/es/form';
-import { BaseInput, BaseFormItem, BaseFormItemProps } from '@/components/atoms';
+import { BaseInput, BaseFormItem, BaseFormItemProps } from '@vitamin-ui/components/atoms';
 
 interface SignInFormItemProps extends BaseFormItemProps {
   label: string;

@@ -1,4 +1,4 @@
-import { THEME_TYPES } from '@/constants';
+import { THEME_TYPES } from '@vitamin-ui/constants';
 import { MoonIcon, SunIcon } from './icons';
 import { BaseButton, BaseButtonProps } from './BaseButton';
 

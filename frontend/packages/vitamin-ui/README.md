@@ -37,9 +37,9 @@ Atomic Design 방식으로 개발된 컴포넌트 라이브러리이다.
       ...기존코드
       resolve: {
         alias: {
-          '@': resolve(__dirname, 'src'),
+          '@vitamin-ui': resolve(__dirname, 'src'),
           '@assets': resolve(__dirname, '../../shared/assets'), // ✅ 절대 경로 사용
-          '@workspace/vitamin-ui': resolve(__dirname, '../../packages/vitamin-ui/src'),  // 재 build 하지 않아도 수정된 사항이 바로 반영된다.
+          '@workspace/vitamin-core': resolve(__dirname, '../../packages/vitamin-core/src'),  // 재 build 하지 않아도 수정된 사항이 바로 반영된다.
         },
       },
     ```

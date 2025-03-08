@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { MenuProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import i18n from '@/i18n';
+import i18n from '@vitamin-ui/i18n';
 import { I18nDropdown } from './index';
 
 const meta: Meta<typeof I18nDropdown> = {
