@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
-import { IpBlockTemplate } from './IpBlockTemplate';
+import { IpBlockErrorTemplate } from './IpBlockErrorTemplate';
 
-const meta: Meta<typeof IpBlockTemplate> = {
-  title: 'Templates/Errors/IpBlockTemplate',
-  component: IpBlockTemplate,
+const meta: Meta<typeof IpBlockErrorTemplate> = {
+  title: 'Templates/Errors/IpBlockErrorTemplate',
+  component: IpBlockErrorTemplate,
   decorators: [
     (Story) => (
       <MemoryRouter>
@@ -19,7 +19,7 @@ const meta: Meta<typeof IpBlockTemplate> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof IpBlockTemplate>;
+type Story = StoryObj<typeof IpBlockErrorTemplate>;
 
 export const Default: Story = {
   args: {

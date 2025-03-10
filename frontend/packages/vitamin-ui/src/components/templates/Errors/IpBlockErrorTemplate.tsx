@@ -1,14 +1,14 @@
 import { Result } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-interface IpBlockTemplateProps {
+interface IpBlockErrorTemplateProps {
   ipAddress: string;
 }
 
-export const IpBlockTemplate = ({ ipAddress }: IpBlockTemplateProps) => {
+export const IpBlockErrorTemplate = ({ ipAddress }: IpBlockErrorTemplateProps) => {
   const { t } = useTranslation();
 
-  const Result404 = (
+  const IpBlockError = (
     <Result
       status="error"
       title={t('public.errorIpBlockTitle')}
@@ -17,5 +17,5 @@ export const IpBlockTemplate = ({ ipAddress }: IpBlockTemplateProps) => {
     />
   );
 
-  return Result404;
+  return IpBlockError;
 };
