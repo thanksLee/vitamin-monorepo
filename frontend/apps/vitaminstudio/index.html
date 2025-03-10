@@ -1,12 +1,26 @@
-<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="%VITE_PUBLIC_CSS_PATH%/favicon.ico" />
+    <link rel="stylesheet" href="/css/loading.css" />
+    <link rel="stylesheet" href="/css/upgrade.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta name="description" content="Vitamin Studio" />
+
+    <title>%VITE_APP_TITLE% - %VITE_APP_VERSION%</title>
   </head>
-  <body>
+
+  <body class="theme-primary">
+    <div id="first" class="ma-mskLoading">
+      <div class="ma-line-scale">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

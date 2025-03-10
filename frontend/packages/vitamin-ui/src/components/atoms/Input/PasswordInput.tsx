@@ -15,6 +15,7 @@ export const PasswordInput = (props: PasswordInputProps) => {
       addonBefore={<LockOutlined className="change" />}
       minLength={6}
       maxLength={30}
+      autoComplete="current-password"
       {...params}
     >
       {children}

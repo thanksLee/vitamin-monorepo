@@ -7,7 +7,6 @@ import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 import pkg from './package.json';
 import viteCompression from 'vite-plugin-compression';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import { logger, splitJSModules, timePlugin } from '@workspace/vitamin-core';
 
 logger.debug('vite.config.ts');
@@ -16,7 +15,6 @@ logger.debug('vite.config.ts');
 export default defineConfig({
   plugins: [
     react(),
-    tsconfigPaths(),
     svgrPlugin({
       // https://react-svgr.com/docs/options/
       svgrOptions: {
@@ -95,7 +93,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'vite'], // React를 외부 모듈로 처리
+      external: ['react', 'react-dom', 'vite', 'react-router', 'react-router-dom', 'react-error-boundary'], // React를 외부 모듈로 처리
       output: {
         globals: {
           react: 'React',

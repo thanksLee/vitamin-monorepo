@@ -1,6 +1,6 @@
-# Vitamin UI
+# VitaminStudio
 
-Atomic Design 기반의 컴포넌트 라이브러리이다.
+- 실제 Application이 구현되는 프로젝트이다.
 
 # 1. 필요 모듈 설치
 
@@ -101,6 +101,14 @@ Atomic Design 기반의 컴포넌트 라이브러리이다.
 
   ```
 
+- react router
+
+  > pnpm add react-router react-router-dom
+
+- react error boundary
+
+  > pnpm add react-error-boundary
+
 - tanstack-query
 
   > pnpm add @tanstack/react-query
@@ -196,3 +204,17 @@ Atomic Design 기반의 컴포넌트 라이브러리이다.
 
   > pnpm add -D @types/nprogress
 
+
+# 2. Build 이후에 테스트 해보기
+
+- serve 설치
+
+  > npm install -g serve
+
+  > cd ./apps/vitamin
+
+  > serve -s dist
+
+  ![](./readme_images/2025-03-10-16-52-04.png)
+
+  ![](./readme_images/2025-03-10-16-51-22.png)

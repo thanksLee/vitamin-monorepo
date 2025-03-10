@@ -31,7 +31,7 @@ export const SignInHeader = () => {
 
   return (
     <S.SignInHeader>
-      <ThemeButton themeStyle={theme} onClick={toggleTheme} />
+      <ThemeButton theme={theme} onClick={toggleTheme} />
       <I18nDropdown
         menuProps={{
           items,
