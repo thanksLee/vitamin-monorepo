@@ -3,6 +3,7 @@ import { App as AntApp, ConfigProvider, theme as antdTheme } from 'antd';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import koKR from 'antd/es/locale/ko_KR';
 import enUS from 'antd/es/locale/en_US';
+import { logger } from '@workspace/vitamin-core';
 import { LANGUAGE_TYPES, THEME_TYPES, type ThemeType } from '@vitamin-ui/constants';
 import { lightTheme, darkTheme } from '@vitamin-ui/themes';
 
@@ -41,7 +42,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
 
-  console.log('theme', theme);
+  logger.debug('theme', theme);
   return (
     <ConfigProvider locale={currentLanguage === LANGUAGE_TYPES.KR ? koKR : enUS} theme={themeConfig}>
       <StyledThemeProvider theme={theme === THEME_TYPES.DARK ? darkTheme : lightTheme}>
