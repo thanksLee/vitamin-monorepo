@@ -205,3 +205,16 @@
   > pnpm add -D @types/nprogress
 
 
+# 2. Build 이후에 테스트 해보기
+
+- serve 설치
+
+  > npm install -g serve
+
+  > cd ./apps/vitamin
+
+  > serve -s dist
+
+  ![](./readme_images/2025-03-10-16-52-04.png)
+
+  ![](./readme_images/2025-03-10-16-51-22.png)
