@@ -48,3 +48,11 @@ Vitamin Core 는 Vitamin Monorepo 에서 사용하는 공통 모듈이다.
 
     ...기존코드
   ```
+
+## 1.4 필요한 Package 설치
+
+- tanstack-query
+
+  > pnpm add @tanstack/react-query
+
+  > pnpm add -D @tanstack/react-query-devtools @tanstack/eslint-plugin-query

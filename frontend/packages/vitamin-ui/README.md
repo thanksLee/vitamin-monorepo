@@ -104,3 +104,11 @@ Atomic Design 방식으로 개발된 컴포넌트 라이브러리이다.
   - 다국어 지원을 위한 Package 설치
 
     > pnpm add i18next i18next-browser-languagedetector i18next-http-backend react-i18next
+
+  - react 관련 Package
+
+    > pnpm add pnpm add react-router react-router-dom
+
+  - react Error boundary 관련 Package
+
+    > pnpm add react-error-boundary
