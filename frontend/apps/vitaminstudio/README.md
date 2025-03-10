@@ -101,6 +101,14 @@
 
   ```
 
+- react router
+
+  > pnpm add react-router react-router-dom
+
+- react error boundary
+
+  > pnpm add react-error-boundary
+
 - tanstack-query
 
   > pnpm add @tanstack/react-query
@@ -195,4 +203,5 @@
   > pnpm add nprogress
 
   > pnpm add -D @types/nprogress
+
 

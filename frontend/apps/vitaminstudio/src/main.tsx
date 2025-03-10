@@ -2,10 +2,11 @@ import { createRoot } from 'react-dom/client';
 // 스타일
 import { StyleProvider, legacyLogicalPropertiesTransformer } from '@ant-design/cssinjs'; // 오래된 브라우저와 호환
 import 'nprogress/nprogress.css';
+import { TanstackQuery } from '@workspace/vitamin-core';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { LocaleProvider } from '@workspace/vitamin-ui';
-import { TanstackQuery } from '@/shared/tanstack-query';
-import '@/shared/styles/global.less';
-import App from './App';
+import Router from '@/app/routers';
+import '@/shared/ui/styles/global.less';
 
 async function initialApp() {
   const rootElement = document.getElementById('root');
@@ -25,9 +26,10 @@ async function initialApp() {
 
   root.render(
     <StyleProvider hashPriority="high" transformers={[legacyLogicalPropertiesTransformer]}>
-      <TanstackQuery isDev={process.env.NODE_ENV === 'development'}>
+      <TanstackQuery>
+        <ReactQueryDevtools initialIsOpen={process.env.NODE_ENV === 'development'} />
         <LocaleProvider>
-          <App />
+          <Router />
         </LocaleProvider>
       </TanstackQuery>
     </StyleProvider>
