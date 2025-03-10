@@ -4,7 +4,7 @@ import { BaseSignInTemplate } from './BaseSignInTemplate';
 import { SuccessfulSubmission, ValidationError } from '@vitamin-ui/components/organisms/SignIn/BaseSignIn.stories';
 
 const meta: Meta<typeof BaseSignInTemplate> = {
-  title: 'Templates/SignIn/BaseSignInTemplate',
+  title: 'Templates/SignIn/BaseSignIn',
   component: BaseSignInTemplate,
   tags: ['autodocs'],
   parameters: {
