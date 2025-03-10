@@ -4,3 +4,4 @@ export * from './mypage';
 export * from './setting';
 export * from './sign-in';
 export * from './etc';
+export * from './errors';

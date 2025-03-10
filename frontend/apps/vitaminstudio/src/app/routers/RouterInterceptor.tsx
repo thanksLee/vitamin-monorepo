@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate, useOutlet } from 'react-router-dom';
-
+import { ErrorBoundary } from 'react-error-boundary';
 import { logger } from '@workspace/vitamin-core';
-import { BaseErrorTemplate as ErrorPage } from '@workspace/vitamin-ui';
 import { PRIVATE_URI, APP_ROUTES } from '@/app/routers/constants';
+import { ErrorPage } from '@/pages/errors';
+
 //import { useIsAuthStore } from '@/store';
 
 import useNProgress from './hooks/useNProgress';
-import { ErrorBoundary } from 'react-error-boundary';
 
 export const RouterInterceptor = () => {
   const navigate = useNavigate();
@@ -21,8 +21,6 @@ export const RouterInterceptor = () => {
   // 인증 및 라우팅 처리
   useEffect(() => {
     const uriPath = location.pathname;
-
-    logger.debug(`uriPath : ${uriPath}`);
 
     // 루트 경로("/")에 접근 시 인증 상태에 따라 리다이렉트
     if (uriPath === '/') {
@@ -48,7 +46,9 @@ export const RouterInterceptor = () => {
       navigate(redirect, { replace: true });
       return;
     }
+    logger.debug(`uriPath : ${uriPath}`);
   }, [isAuth, location, navigate]);
+
   // 현재 라우트가 없으면 NotFound 페이지를 렌더링
   return (
     <ErrorBoundary FallbackComponent={(props) => <ErrorPage privateUri={PRIVATE_URI} {...props} />}>

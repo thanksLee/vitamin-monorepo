@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import { logger } from '@workspace/vitamin-core';
 import { NotFoundTemplate } from './404Template';
 
@@ -14,7 +15,13 @@ const meta: Meta<typeof NotFoundTemplate> = {
     },
     layout: 'centered',
   },
-  decorators: [(Story) => <Story />],
+  decorators: [
+    (Story) => (
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+    ),
+  ],
 };
 
 export default meta;

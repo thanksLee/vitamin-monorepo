@@ -7,7 +7,7 @@ export const SignInInput = (props: BaseInputProps) => {
   const params: Partial<BaseInputProps> = { ...props };
 
   return (
-    <BaseInput allowClear addonBefore={<UserOutlined className="change" />} {...params}>
+    <BaseInput allowClear autoComplete="username" addonBefore={<UserOutlined className="change" />} {...params}>
       {children}
     </BaseInput>
   );

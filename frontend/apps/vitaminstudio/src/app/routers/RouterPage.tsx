@@ -1,11 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import { NotFoundTemplate } from '@workspace/vitamin-ui';
-
-import { Dashboard, Home, MyPage, Setting, SignIn, EtcWrapper } from '@/pages';
-import { RouterInterceptor } from './RouterInterceptor';
 import { APP_ROUTES } from '@/app/routers/constants';
+import { Dashboard, Home, MyPage, Setting, SignIn, EtcWrapper, NotFound } from '@/pages';
 import { HomeSample1, HomeSample2 } from '@/pages/samples';
+import { RouterInterceptor } from './RouterInterceptor';
 
 const RouterPage = () => {
   return (
@@ -28,7 +25,7 @@ const RouterPage = () => {
           </Route>
 
           {/* 와일드카드 경로 */}
-          <Route path="*" element={<NotFoundTemplate />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

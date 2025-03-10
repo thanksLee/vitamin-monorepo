@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
+import { BrowserRouter } from 'react-router-dom';
 import { logger } from '@workspace/vitamin-core';
 import { Auth403Template } from './403Template';
-
 const meta: Meta<typeof Auth403Template> = {
   title: 'Templates/Errors/403',
   component: Auth403Template,
@@ -14,7 +14,13 @@ const meta: Meta<typeof Auth403Template> = {
     },
     layout: 'centered',
   },
-  decorators: [(Story) => <Story />],
+  decorators: [
+    (Story) => (
+      <BrowserRouter>
+        <Story />
+      </BrowserRouter>
+    ),
+  ],
 };
 
 export default meta;
