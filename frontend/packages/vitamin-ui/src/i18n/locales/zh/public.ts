@@ -10,4 +10,7 @@ export default {
   SubTitle403: 'Sorry, you are not authorized to access this page.',
   SubTitle404: 'Sorry, the page you visited does not exist.',
   SubTitle500: 'Sorry, the server is reporting an error.',
+  errorIpBlockTitle: 'Blocked IP address',
+  errorIpBlockSubTitle: 'Access IP address : ',
+  errorIpBlockMessage: 'Please contact the administrator to release the IP block.',
 };
