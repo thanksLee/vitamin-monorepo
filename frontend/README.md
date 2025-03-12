@@ -2,7 +2,101 @@
 
 본 프로젝트는 React 를 심도있게 공부하기 위한 프로젝트입니다.
 
-# 1. 프로젝트 사용 버전 정보
+## 1. 프로젝트 구조도
+
+```mermaid
+
+  flowchart TB
+
+    A@{shape: circle, label: "User"} --> |①| B@{shape: rect, label: "ROUTER INTERCEPTOR"}
+    B --> |②| C@{shape: rect, label: "ROUTER"}
+
+    subgraph Frontend
+      direction TB
+
+      J@{shape: rect, label: "PAGE"} --> K@{shape: rect, label: "FORM"}
+      K --> L@{shape: rect, label: "유효성 체크"}
+      L --> M@{shape: rect, label: "EVENT"}
+
+      subgraph FSD
+        direction LR
+
+        FA@{shape: rect, label: APP} --> FB@{shape: rect, label: PAGES}
+        FB --> FC@{shape: rect, label: WIDGETS}
+        FC --> FD@{shape: rect, label: FEATURES}
+        FD --> FE@{shape: rect, label: ENTITIES}
+        FE --> FF@{shape: rect, label: SHARED}
+
+      end
+    end
+
+    subgraph Backend
+      direction TB
+
+      BA@{shape: rect, label: Request} --> | ⓐ | BB@{shape: rect, label: Interceptor Middleware}
+      BB --> | ⓑ | BC@{shape: rect, label: ROUTER}
+      BC --> | ⓒ | BD@{shape: rect, label: SERVICE}
+      BD --> | ⓓ | BE@{shape: rect, label: "REQUEST SCHEMA"}
+      BE --> | ⓔ | BF@{shape: rect, label: MAPPER}
+      BF --> | ⓕ | BG@{shape: rect, label: MODEL}
+
+      BG --> | ⓘ | BF
+      BF ---> | ⓙ | BH@{shape: rect, label: "RESPONSE SCHEMA"}
+      BH --> | ⓚ | BD
+      BD --> | ⓛ | BC
+      BC --> | ⓜ | BB
+      BB ----> | ⓝ | BI@{shape: rect, label: RESPONSE}
+
+    end
+
+    BG --> | ⓖ | DATABASE@{shape: cyl, label: DATABASE}
+    DATABASE --> | ⓗ | BG
+
+    J --> FSD
+
+    C ---> | ③ /sec/ | Frontend
+    C ---> | ③ /no sec/ | Frontend
+
+
+    subgraph "Tanstak-Query"
+      direction TB
+
+      E@{shape: rect, label: "TanstackQuery"}
+      E --> |⑤| F@{shape: rect, label: "Request Adaptor"}
+      F --> |⑥| G@{shape: rect, label: "Axios"}
+      G --> |⑨| I@{shape: rect, label: "Response Adaptor"}
+      I --> |⑩| E
+    end
+
+    M --> |④| E
+    G --> |⑦| BA
+    BI --> |⑧| G
+    E --> |⑪| M
+
+    subgraph FE-Vitamin-Ui
+      direction TB
+
+      VUA@{shape: rect, label: ATOMS} --> VUB@{shape: rect, label: MOLECULE}
+      VUB --> VUC@{shape: rect, label: ORGANISM}
+      VUC --> VUD@{shape: rect, label: TEMPLAGE}
+    end
+
+    subgraph FE-Vitamin-Core
+      direction TB
+
+      VCA@{shape: rect, label: CORE}
+    end
+
+    VUC --> J
+    VUD --> J
+
+    FE-Vitamin-Core --> FE-Vitamin-Ui
+    FE-Vitamin-Core --> Client
+
+```
+
+
+# 2. 프로젝트 사용 버전 정보
 
 - Node.js 버전 20.15.0 이상 사용하며, 현 프로젝트는 22.11.0 버전을 사용.
 
@@ -16,11 +110,11 @@
 
   > pnpm list react
 
-# 2. 프로젝트 구조
+# 3. 프로젝트 구조
 
 본 프로젝트는 아래와 같은 구조로 이루어져 있습니다.
 
-## 2.1 프로젝트 생성
+## 3.1 프로젝트 생성
 
 - React Monorepo 프로젝트 생성
 
@@ -28,7 +122,7 @@
 
   ![](./readmeImages/2024-12-07-14-44-40.png)
 
-## 2.2 apps 프로젝트 생성
+## 3.2 apps 프로젝트 생성
 
   > cd apps
 
@@ -53,7 +147,7 @@
     ![](./readmeImages/2025-02-22-09-28-08.png)
 
 
-## 2.3 packages 프로젝트 생성
+## 3.3 packages 프로젝트 생성
 
 - vitamin-core 프로젝트 생성
   > cd packages
@@ -86,11 +180,3 @@
         VITE_DISABLE_TELEMETRY=true
       ```
 
-## 3. 프로젝트 Dependency 관계도
-
-```mermaid
-graph TD
-    vitaminstudio --> vitamin-core
-    vitaminstudio --> vitamin-ui
-    vitamin-ui --> vitamin-core
-```
