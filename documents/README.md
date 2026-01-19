@@ -91,11 +91,6 @@ graph TD
     P3:::phase3
     P4:::phase4
     P5:::phase5
-
-    %% 피드백 루프 (Feedback Loop)
-    P5A -- "누락 발견 시" --> P1A
-    P5C -- "데이터 불일치" --> P3B
-    P5F -- "구현 불일치" --> P3E
 ```
 
 ---
