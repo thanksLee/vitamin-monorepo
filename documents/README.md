@@ -20,74 +20,82 @@ graph TD
     subgraph Loop [Development Iteration Cycle]
         direction TB
         
-        %% Phase 1: 기획 및 분석
+        %% Phase 1: 기획 및 분석 (Analysis & Planning)
         subgraph P1 [1. Analysis & Planning]
             P1A(요구사항 정의서) -- "사람" --> P1X(화면 스케치)
-            %% 사용자 스토리 : 
-            %% - 이야기 (누가-역할, 무엇을-기능, 왜-가치/목적) 
-            %% - 인수조건 (기능이 구체적으로 어떻게 동작해야 하는지, 제약사항은 무엇인지 기술.)
+            
+            %% 사용자 스토리 & 유스케이스
             P1A & P1X -- "사람" --> P1B(사용자 스토리 작성<br/>::이야기,인수조건)
-            P1B -- "AI" --> P1C(유스케이스 다이어그램)
-            %% 유스케이스별 시퀀스 다이어그램
-            P1C -- "AI" --> P1D(유스케이스 별<br/>::시퀀스 다이어그램)
-            P1B -- "AI" --> P1E(도메인 용어 도출)
-            P1D -- "AI" --> P1F(기술 용어 도출)
-            P1E & P1F -- "AI" --> P1G(핵심 용어 정리)
+            P1B -- "AI초안 + 사람검토" --> P1C(유스케이스 다이어그램)
+            
+            %% 상세 시나리오 (설계의 앵커)
+            P1C -- "AI초안 + 사람검토" --> P1D(유스케이스 상세 시나리오<br/>::System 중심 기술)
+            
+            %% 시퀀스 다이어그램
+            P1D -- "AI초안 + 사람검토" --> P1E(유스케이스 별<br/>::시퀀스 다이어그램)
         end
 
-        %% Phase 2: 상세 설계
-        subgraph P2 [2. Detailed Design]
-            %% 사용자 스토리: 인수조건 + 시퀀스 다이어그램 + 핵심 용어
-            P1C & P1D & P1G -- "AI" --> P2A(유스케이스 상세 시나리오<br/>::System 중심 기술)
-            %% BE: Backend, FE: Frontend, PM: Project Manager, DE: Designer
-            P2A -- "AI" --> P2B(Role별 Task 분할<br/>::BE/FE/PM/DE)
-            P2B -- "AI" --> P2C(Task 기반<br/>::단위 테스트 시나리오)
+        %% Phase 2: 데이터 및 표준 (Data & Standards)
+        subgraph P2 [2. Data & Standards]
+            P1D & P1E -- "AI초안 + 사람검토" --> P2A(표준 사전<br/>::공통코드, 용어사전)
+            P2A -- "AI초안 + 사람검토" --> P2B(논리 ERD)
+        end
 
-            %% QA/PM 영역
-            P2A -- "AI" --> P2D(유스케이스 상세 시나리오 기반<br/>::통합 테스트 시나리오)
+        %% Phase 3: 기술 구현 설계 (Technical Design)
+        subgraph P3 [3. Technical Implementation]
+            %% 외부 인터페이스
+            P1D -- "AI초안 + 사람검토" --> P3A(API 명세서)
+
+            %% DB 물리 설계
+            P2B & P3A -- "AI초안 + 사람검토" --> P3B(테이블 명세서)
+            P3B -- "AI" --> P3C(물리 ERD)
+            
+            %% 내부 구조 설계 (Top-Down)
+            P1D -- "AI초안 + 사람검토" --> P3D(컴포넌트 설계<br/>::모듈 덩어리 정의)
+            P3D & P3A -- "AI초안 + 사람검토" --> P3F(인터페이스 정의서<br/>::I/O 규격 및 메서드)
+            P3F -- "AI초안 + 사람검토" --> P3E(클래스 설계<br/>::내부 로직)
+        end
+
+        %% Phase 4: 구현 준비 및 태스크 (Implementation Prep)
+        subgraph P4 [4. Task Breakdown]
+            %% 설계가 다 끝난 후 Task 분할 (입력값: 시나리오, API, 테이블, 클래스)
+            P1D & P3A & P3B & P3E -- "AI초안 + 사람검토" --> P4A(Role별 Task 분할<br/>::BE/FE/DevOps)
+            P4A -- "AI초안 + 사람검토" --> P4B(Task 기반<br/>::단위 테스트 시나리오)
+
+            %% QA 통합 테스트 설계
+            P1D & P3A -- "AI초안 + 사람검토" --> P4D(유스케이스 시나리오 기반<br/>::통합 테스트 시나리오)
         end 
 
-        %% Phase 3: 데이터 및 표준 (Bridge)
-        subgraph P3 [3. Data & Standards]
-            P2A -- "AI" --> P3A(표준 사전<br/>::공통코드, 표준단어사전, 표준용어사전)
-            P3A -- "AI" --> P3B(논리 ERD)
-        end
-
-        %% Phase 4: 기술 구현 설계
-        subgraph P4 [4. Technical Implementation]
-            P2A -- "AI" --> P4A(API 명세서)
-            %% 데이터 설계
-            P3B -- "AI" --> P4B(테이블 명세서)
-            P4B -- "AI" --> P4C(물리 ERD)
-            %% 시나리오 -> 컴포넌트(덩어리) -> 인터페이스(약속) -> 클래스(구현)
-            P2A -- "AI" --> P4D(컴포넌트 설계<br/>::모듈 덩어리 정의)
-            P4D -- "AI" --> P4F(인터페이스 정의서<br/>::I/O 규격및 메소드 정의)
-            P4F -- "AI" --> P4E(클래스 설계<br/>::내부로직)
-        end
-
-        %% Phase 5: 검증 및 피드백
+        %% Phase 5: 검증 및 피드백 (Verification)
         subgraph P5 [5. Verification]
-            P1B -- "AI" --> P5A{"사용자스토리(인수조건) - Task"}
-            P2C -- "AI" --> P5B{"Task - 단위 테스트 시나리오"}
-            P2A -- "AI" --> P5C{"유스케이스 상세 시나리오 - 테이블 명세서"}
-            P2D -- "AI" --> P5D{"유스케이스 상세 시나리오 - 통합 테스트 시나리오"}
-            %% 클래스가 인터페이스(설계)대로 구현되었는지 확인
-            P4F -- "AI" --> P5E{"인터페이스 - 클래스 설계"}
-            P4A -- "AI" --> P5F{"API 명세서 - 인터페이스/클래스"}
+            %% 기획 정합성
+            P1B & P4A -- "AI" --> P5A{"사용자스토리(인수조건) - Task"}
+            %% 테스트 커버리지
+            P4A & P4B -- "AI" --> P5B{"Task - 단위 테스트 시나리오"}
+            %% 데이터 정합성
+            P1D & P3B -- "AI" --> P5C{"시나리오 - 테이블 명세서"}
+            %% 기능 완결성
+            P1D & P4D -- "AI" --> P5D{"시나리오 - 통합 테스트 시나리오"}
+            
+            %% 설계 준수 여부 (내부)
+            P3F & P3E -- "AI" --> P5E{"인터페이스 - 클래스 설계"}
+            %% API 계약 준수 여부 (외부)
+            P3A & P3F & P3E -- "AI" --> P5F{"API 명세서 - 인터페이스/클래스"}
         end
+
     end
 
-    %% 연결 및 순환 고리
+    %% 스타일 적용
     P1:::phase1
     P2:::phase2
     P3:::phase3
     P4:::phase4
     P5:::phase5
 
-    %% 순환 피드백 (Feedback Loop)
-    P5A -- "버그/누락 발견 시<br/>요구사항 재정의" --> P1A
-    P5A -- "설계 오류 발견 시<br/>시나리오 수정" --> P2A
-    P5F -- "Mismatch 발견 시" --> P4A
+    %% 피드백 루프 (Feedback Loop)
+    P5A -- "누락 발견 시" --> P1A
+    P5C -- "데이터 불일치" --> P3B
+    P5F -- "구현 불일치" --> P3E
 ```
 
 ---
